@@ -1,0 +1,12 @@
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.exe
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.deps.json
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.runtimeconfig.json
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.runtimeconfig.dev.json
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.dll
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\bin\Debug\netcoreapp3.1\CustomStack.pdb
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.csprojAssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.dll
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.pdb
+C:\Users\gabri\OneDrive\Desktop\DataStructures\CustomStack\obj\Debug\netcoreapp3.1\CustomStack.genruntimeconfig.cache
