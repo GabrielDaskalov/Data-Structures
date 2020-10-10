@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CustomList
 {
-    public interface IAbstractList<T>
+    public interface IAbstractList<T>: IEnumerable<T>
     {
         void Add(T item);
 
@@ -21,7 +21,9 @@ namespace CustomList
         int IndexOf(T item);
 
         bool Remove(T item);
-            
+
+        new IEnumerator<T> GetEnumerator();
+
 
     }
 }
