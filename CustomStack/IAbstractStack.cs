@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CustomStack
 {
-    public interface IAbstractStack<T>
+    public interface IAbstractStack<T>: IEnumerable<T>
     {
         void Push(T item);
 
@@ -13,6 +13,8 @@ namespace CustomStack
         T Peek();
 
         int Count { get; }
+
+        new IEnumerator<T> GetEnumerator();
 
 
 
