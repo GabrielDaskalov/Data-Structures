@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -79,7 +80,7 @@ namespace CustomQueue
 
         public bool Contains(T item)
         {
-            var current = this.front;
+            var current = this.head;
 
             while (current.Next != null)
             {
@@ -104,6 +105,28 @@ namespace CustomQueue
 
             return true;
 
+
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+
+            Node<T> current = this.head;
+
+            while (current != null)
+            {
+                yield return current.Value;
+
+                current = current.Next;
+
+            }
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+
+            return this.GetEnumerator();
 
         }
     }
