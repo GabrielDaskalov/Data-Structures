@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -162,6 +162,27 @@ namespace CustomList
             }
         
         
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            int length = this.Count;
+            int countTemp = 0;
+
+            while (length > 0)
+            {
+                yield return items[countTemp++];
+
+                length--;
+            }
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+
+            return this.GetEnumerator();
+
         }
     }
 }
