@@ -1,7 +1,9 @@
-﻿
+
+using System.Collections.Generic;
+
 namespace CustomQueue
 {
-    public interface IAbstractQueue<T>
+    public interface IAbstractQueue<T>: IEnumerable<T>
     {
         void Enqueue(T item);
 
@@ -10,6 +12,11 @@ namespace CustomQueue
         T Peek();
 
         int Count { get; }
+
+        bool Contains(T item);
+
+        new IEnumerator<T> GetEnumerator();
+
 
 
     }
