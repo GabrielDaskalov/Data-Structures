@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LinkedList
 {
-    public interface IAbstractLinkedList<T>
+    public interface IAbstractLinkedList<T>: IEnumerable<T>
     {
         void AddLast(T item);
 
@@ -19,6 +19,9 @@ namespace LinkedList
         T GetLast();
 
         int Count { get; }
+
+        IEnumerator<T> GetEnumerator();
+
 
     }
 }
