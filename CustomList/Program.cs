@@ -1,4 +1,4 @@
-﻿
+
 namespace CustomList
 {
     public class Program
@@ -13,12 +13,18 @@ namespace CustomList
             list.Add(4);
             list.Add(5);
 
+            foreach (var item in list)
+            {
+                System.Console.WriteLine(item);
+            }
+
             list.RemoveAt(3);
             list.Remove(8);
             list.Remove(1);
 
             System.Console.WriteLine(list.IndexOf(3));
 
+          
 
         }
     }
