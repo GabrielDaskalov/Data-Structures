@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -67,7 +68,25 @@ namespace CustomStack
         
 
         }
+        public IEnumerator<T> GetEnumerator()
+        {
+            Node<T> current = this.top;
 
+            while (current != null)
+            {
+                yield return current.Value;
+
+                current = current.Next;
+
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+
+
+        }
         private bool EnsureNotEmpty()
         {
             if (this.top == null)
