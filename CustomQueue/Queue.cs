@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,6 +18,24 @@ namespace CustomQueue
 
 
         public int Count => this.count;
+
+        public bool Contains(T item)
+        {
+            var current = this.front;
+
+            while (current.Next != null)
+            {
+                if (current.Value.Equals(item))
+                {
+                    return true;
+                }
+
+                current = current.Next;
+            }
+
+
+            return false;
+        }
 
         public T Dequeue()
         {
@@ -76,6 +95,28 @@ namespace CustomQueue
 
             return true;
 
+
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+
+            Node<T> current = this.front;
+
+            while (current != null)
+            {
+                yield return current.Value;
+
+                current = current.Next;
+
+            }
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+
+            return this.GetEnumerator();
 
         }
     }
