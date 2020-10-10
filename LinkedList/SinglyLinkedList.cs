@@ -132,16 +132,23 @@ namespace LinkedList
             return secondLast.Value;
 
         }
-
-        public void Print()
+        
+         public IEnumerator<T> GetEnumerator()
         {
-            
-            while (this.head != null)
+            Node<T> current = this.head;
+
+            while (current != null)
             {
-                Console.WriteLine(this.head.Value);
-                this.head = this.head.Next;
+                yield return current.Value;
+
+                current = current.Next;
 
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
 
 
         }
