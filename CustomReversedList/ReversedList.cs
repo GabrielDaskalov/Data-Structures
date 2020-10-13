@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -16,18 +16,20 @@ namespace CustomReversedList
             this.items = new T[capacity];
         }
 
-
+        //accessing the elements in reversed order
         public T this[int index]
         {
+           
+
             get
             {
-                ValidateIndex(index);
-                return this.items[index];
+                ValidateIndex(this.Count - index - 1);
+                return this.items[this.Count - index - 1];
             }
             set
             {
-                ValidateIndex(index);
-                this.items[index] = value;
+                ValidateIndex(this.Count - index - 1);
+                this.items[this.Count - index - 1] = value;
 
             }
 
