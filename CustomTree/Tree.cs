@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,12 +14,12 @@ namespace CustomTree
             this.Parent = null;
             this._children = new List<Tree<T>>();
 
-                 
+
         }
 
 
         public Tree(T value, params Tree<T>[] children)
-            :this(value)
+            : this(value)
         {
             foreach (var child in children)
             {
@@ -49,7 +49,7 @@ namespace CustomTree
 
         }
 
-       
+
 
         public ICollection<Tree<T>> OrderBfs()
         {
@@ -132,15 +132,48 @@ namespace CustomTree
             var firstNode = this.FindBfs(firstKey);
             var secondNode = this.FindBfs(secondKey);
 
+            CheckIfEmptyNode(firstNode);
+            CheckIfEmptyNode(secondNode);
+
+
             var firstNodeParent = firstNode.Parent;
             var secondNodeParent = secondNode.Parent;
 
-            int indexOfFirst = firstNodeParent._children.IndexOf(firstNode);
-            int indexOfSecond = secondNodeParent._children.IndexOf(secondNode);
+            if (firstNodeParent == null)
+            {
+                SwapRoot(secondNode);
+                return;
+            }
+            else if (secondNodeParent == null)
+            {
+                SwapRoot(firstNode);
+                return;
+
+            }
+
+            firstNode.Parent = secondNodeParent;
+            secondNode.Parent = firstNodeParent;
+
+
+            var indexOfFirst = firstNodeParent._children.IndexOf(firstNode);
+            var indexOfSecond = secondNodeParent._children.IndexOf(secondNode);
 
             firstNodeParent._children[indexOfFirst] = secondNode;
             secondNodeParent._children[indexOfSecond] = firstNode;
 
+
+
+        }
+
+        private void SwapRoot(Tree<T> secondNode)
+        {
+            this.Value = secondNode.Value;
+            this._children.Clear();
+
+            foreach (var child in secondNode.Children)
+            {
+                this._children.Add(child);
+            }
         }
 
         private List<Tree<T>> DfsRecursively(Tree<T> tree, List<Tree<T>> result)
